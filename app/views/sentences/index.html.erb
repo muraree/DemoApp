@@ -1,0 +1,5 @@
+<ul>
+  <% @sentences.each do |sentence| %>
+    <li><%= sentence.formatted_view.html_safe %></li>
+  <% end %>
+</ul>
