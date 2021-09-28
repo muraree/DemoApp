@@ -4,7 +4,17 @@ class SentencesController < ApplicationController
   end
 
   def show
-    @sentence = Sentence.find_by(params[:id])
+    @sentence = Sentence.find(params[:id])
+  end
+
+  def new
+    @sentence = Sentence.new
+  end
+
+  def create
+    sentence = Sentence.create(sentence_params)
+
+    redirect_to sentence_path(sentence)
   end
 
   private
